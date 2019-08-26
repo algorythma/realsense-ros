@@ -239,6 +239,7 @@ namespace realsense2_camera
         void publishAlignedDepthToOthers(rs2::frameset frames, const ros::Time& t);
         double FillImuData_Copy(const stream_index_pair stream_index, const CIMUHistory::imuData imu_data, sensor_msgs::Imu& imu_msg);
         double FillImuData_LinearInterpolation(const stream_index_pair stream_index, const CIMUHistory::imuData imu_data, sensor_msgs::Imu& imu_msg);
+        void ConvertFromOpticalFrameToFrame(float3& data);
         void imu_callback(rs2::frame frame);
         void imu_callback_sync(rs2::frame frame, imu_sync_method sync_method=imu_sync_method::COPY);
         void pose_callback(rs2::frame frame);
